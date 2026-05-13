@@ -639,15 +639,6 @@ function LessonPlayer({ langId, levelId, lesson, progress, setProgress, userId, 
 
         {/* Status do áudio */}
         <input ref={fileInputRef} type="file" accept=".mp3,audio/*" style={{ display: "none" }} onChange={handleFileImport} />
-        {audioStatus === "ready" && (
-          <div onClick={() => fileInputRef.current?.click()} style={{ background: `${lang.color1}18`, border: `1px solid ${lang.color2}38`, borderRadius: 14, padding: "10px 16px", display: "flex", alignItems: "center", gap: 10, marginBottom: 20, cursor: "pointer" }}>
-            <div style={{ fontSize: 16 }}>🎵</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 11, color: lang.color2, fontWeight: 700 }}>Áudio carregado do R2</div>
-              <div style={{ fontSize: 10, opacity: 0.38, marginTop: 1 }}>Toque para trocar</div>
-            </div>
-          </div>
-        )}
         {audioStatus === "error" && (
           <div style={{ marginBottom: 20 }}>
             <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 10, padding: "8px 14px", marginBottom: 8, fontSize: 10, color: "#fca5a5", textAlign: "center" }}>
